@@ -1,0 +1,8 @@
+.font-tab-title {
+    font-size: 30px;
+    font-weight: bold;
+}
+
+::ng-deep .mdc-tab-indicator__content--underline {
+    opacity: 0 !important;
+}

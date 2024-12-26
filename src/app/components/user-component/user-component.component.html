@@ -1,0 +1,10 @@
+<mat-tab-group [(selectedIndex)]="selectedIndex" (selectedTabChange)="onTabChange($event)">
+    <mat-tab *ngFor="let tab of tabs">
+      <ng-template mat-tab-label>
+          <p class="font-tab-title">{{tab.label}}</p>
+      </ng-template>
+      <app-dashboard-component *ngIf="selectedTab.label === 'Dashboard'"></app-dashboard-component>
+      <app-calendar-component *ngIf="selectedTab.label === 'Calendar'"></app-calendar-component>
+    </mat-tab>
+</mat-tab-group>
+  
