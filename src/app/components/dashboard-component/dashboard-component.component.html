@@ -1,1 +1,29 @@
-<p>dashboard-component works!</p>
+<div style="display: flex; justify-content: right;">
+    <button>Add Communication</button>
+</div>
+<table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+      <ng-container matColumnDef="Select">
+        <th mat-header-cell *matHeaderCellDef> Select </th>
+        <td mat-cell *matCellDef="let element"> {{element.icon}} </td>
+      </ng-container>
+    
+
+      <ng-container matColumnDef="CompanyName">
+        <th mat-header-cell *matHeaderCellDef> CompanyName </th>
+        <td mat-cell *matCellDef="let element"> {{element.companyName}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="LastFiveComminications">
+        <th mat-header-cell *matHeaderCellDef> LastFiveComminications </th>
+        <td mat-cell *matCellDef="let element"> <div *ngFor="let comm of element.lastFiveComminications">{{comm}}</div> </td>
+      </ng-container>
+    
+
+      <ng-container matColumnDef="NextCommunications">
+        <th mat-header-cell *matHeaderCellDef> NextCommunications </th>
+        <td mat-cell *matCellDef="let element"> <div *ngFor="let comm of element.nextCommunications">{{comm}}</div></td>
+      </ng-container>
+    
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>
